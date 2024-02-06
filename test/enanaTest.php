@@ -68,10 +68,10 @@ class enanaTest extends TestCase {
         if($Puntos<0){$check = true;} //COMPROBACION PUNTOS ENTRE -10 y 0
         $this->assertEquals($check,"true");
 
-        
+        $enana3->pocima();
 
-        if($Puntos>=1){$check = true;} //COMPROBACION DE MAYOR DE 0
-        $this->assertEquals($check,"true");
+        if($Puntos>=1){$check = false;} //COMPROBACION DE MAYOR DE 0
+        $this->assertEquals($check,"false");
 
         $this->assertEquals(($enana3->getSituacion()),"viva"); //COMPROBACION DE LIMBO
     }
