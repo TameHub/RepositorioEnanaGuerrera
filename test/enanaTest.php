@@ -3,15 +3,23 @@
 use PHPUnit\Framework\TestCase;
 include './src/Enana.php';
 
-$enana1 = new Enana("ENANA",100);
+
 
 class EnanaTest extends TestCase {
     
-    
+    private $enana1;
+    private $enana2;
+    private $enana3;
+
+    public function setUp(): void {
+        $this->enana1 = new Enana("ENANA 1", 100);
+        $this->enana2 = new Enana("ENANA 2", 80);
+        $this->enana3 = new Enana("ENANA 3", -5);
+    }
 
     public function testCreandoEnana() {
         #Se probará la creación de enanas vivas, muertas y en limbo y se comprobará tanto la vida como el estado
-        $this->assertEquals($this->enana1->getSituacion,"viva");
+        $this->assertEquals(($this->enana1->getSituacion),"viva");
     }
     public function testHeridaLeveVive() {
         #Se probará el efecto de una herida leve a una Enana con puntos de vida suficientes para sobrevivir al ataque
