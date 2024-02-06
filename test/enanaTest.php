@@ -80,8 +80,17 @@ class enanaTest extends TestCase {
         #Se probará el efecto de administrar una pócima a una Enana en el libo
         #Se tendrá que probar que la vida y situación no ha cambiado
         $enana3 = new Enana("ENANA MUERTA",0);
+        
+    
         $this->assertEquals(($enana3->getSituacion()),"limbo");
         $enana3->pocima();
+
+        $Puntos = $enana3->getPuntosVida();
+        $check = false;
+
+        if($Puntos==0){$check = true;} //COMPROBACION PUNTOS ENTRE -10 y 0
+        $this->assertEquals($check,"true");
+
         $this->assertEquals(($enana3->getSituacion()),"limbo");
 
     }
