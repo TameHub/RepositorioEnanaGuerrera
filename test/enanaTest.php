@@ -64,7 +64,7 @@ class enanaTest extends TestCase {
         $enana3 = new Enana("ENANA MUERTA",-5);
         $Puntos = $enana3->getPuntosVida();
         $check = false;
-        if(-10<=$Puntos<=-1){$check = true;} //COMPROBACION PUNTOS ENTRE -10 y 0
+        if((-10)<=$Puntos<=(-1)){$check = true;} //COMPROBACION PUNTOS ENTRE -10 y 0
         $this->assertEquals($check,"true");
         $enana3->pocima(); //AÑADIDO DE 10
 
