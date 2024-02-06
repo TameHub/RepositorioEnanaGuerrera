@@ -21,6 +21,11 @@ class enanaTest extends TestCase {
         #Se tendrá que probar que la vida es mayor que 0 y además que su situación es viva
         $enana1 = new Enana("ENANA VIVA",100);
         $enana1->heridaLeve();
+        $Puntos = $enana1->getPuntosVida();
+        $check = false;
+        if($Puntos>0){$check = true;}
+
+        $this->assertEquals($check,"true");
         $this->assertEquals(($enana1->getSituacion()),"viva");      
     }
 
@@ -29,6 +34,11 @@ class enanaTest extends TestCase {
         #Se tendrá que probar que la vida es menor que 0 y además que su situación es muerta
         $enana1 = new Enana("ENANA",1);
         $enana1->heridaLeve();
+        $Puntos = $enana1->getPuntosVida();
+        $check = false;
+        if($Puntos>0){$check = true;}
+        
+        $this->assertEquals($check,"true");
         $this->assertEquals(($enana1->getSituacion()),"muerta"); 
     }
 
