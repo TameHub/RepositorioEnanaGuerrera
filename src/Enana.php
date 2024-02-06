@@ -50,6 +50,7 @@ class Enana
 
         if ($this->puntosVida > 0) {
             $this->situacion = "limbo";
+            $this->puntosVida = 0;
         }
 
     }
